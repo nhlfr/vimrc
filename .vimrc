@@ -26,6 +26,8 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'davidhalter/jedi-vim'
 " Puppet
 NeoBundle 'rodjek/vim-puppet'
+" Angular
+NeoBundle 'burnettk/vim-angular'
 " snippets
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
@@ -41,10 +43,15 @@ filetype plugin indent on
 " ------------------
 " Languages settings
 " ------------------
+autocmd Filetype c setlocal ts=4 sw=4 expandtab
+autocmd Filetype cpp setlocal ts=4 sw=4 expandtab
 autocmd Filetype python setlocal ts=4 sw=4 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=4 sw=4 expandtab
 
 " -----
 " Other
 " -----
+set number
+set background=dark
 colorscheme solarized
