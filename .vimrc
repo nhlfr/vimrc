@@ -28,6 +28,8 @@ NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'rodjek/vim-puppet'
 " Angular
 NeoBundle 'burnettk/vim-angular'
+" Git
+NeoBundle 'tpope/vim-fugitive'
 " snippets
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
