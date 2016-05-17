@@ -1,13 +1,4 @@
 " ---------
-" Powerline
-" ---------
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-set laststatus=2
-set t_Co=256
-
-" ---------
 " NeoBundle
 " ---------
 if has('vim_starting')
@@ -19,6 +10,8 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 call neobundle#begin(expand('~/.vim/bundle'))
+" Autocompletion
+NeoBundle 'Shougo/neocomplete.vim'
 " Go
 NeoBundle 'nsf/gocode'
 NeoBundle 'fatih/vim-go'
@@ -36,8 +29,9 @@ NeoBundle 'Shougo/neosnippet-snippets'
 " Sidebars
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'majutsushi/tagbar'
-" Colorschemes
+" UX
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'vim-airline/vim-airline'
 call neobundle#end()
 NeoBundleCheck
 filetype plugin indent on
@@ -45,15 +39,24 @@ filetype plugin indent on
 " ------------------
 " Languages settings
 " ------------------
-autocmd Filetype c setlocal ts=4 sw=4 expandtab
-autocmd Filetype cpp setlocal ts=4 sw=4 expandtab
 autocmd Filetype python setlocal ts=4 sw=4 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 expandtab
 
 " -----
-" Other
+" Autocompletion
+" -----
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:airline_powerline_fonts = 1
+
+" -----
+" Theme
 " -----
 set number
+if !has("gui_running")
+	let g:solarized_termtrans=1
+	let g:solarized_termcolors=256
+endif
 set background=dark
 colorscheme solarized
